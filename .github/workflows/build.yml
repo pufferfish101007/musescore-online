@@ -33,11 +33,12 @@ jobs:
           mkdir ~/mscore/dist
           cd ~/mscore/dist
       - name: configure
-        run: emcmake cmake .. -DCMAKE_INSTALL_PREFIX=install_dir
+        run: |
+          emcmake cmake ~/mscore -DCMAKE_INSTALL_PREFIX=install_dir
       - name: build
-        run: emcmaks cmake --build .
+        run: emcmaks cmake --build ~/mscore/dist
       - name: install
-        run: emcmake cmake --build . --target install 
+        run: emcmake cmake --build ~/mscore/dist --target install 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Build Musescore
