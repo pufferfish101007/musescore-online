@@ -23,7 +23,7 @@ jobs:
         with:
           python-version: '3.10.x'
       - name: install dependencies
-        run: npm install emscripten-sdk
+        run: npm install emscripten-sdk@sdk-2.0.14
       - name: clone musescore
         run: git clone https://github.com/musescore/musescore.git ~/mscore --depth=1
       - name: prepare for building
